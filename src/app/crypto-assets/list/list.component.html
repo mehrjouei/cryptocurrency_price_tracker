@@ -1,6 +1,9 @@
 <div *ngIf="!(loading$ | async); else loadingBlock">
-  <input type="text" placeholder="Type to search" [formControl]="searchInput" />
-  <ul>
+  <div class="input-wrapper">
+    <label for="">Filter Currencies:</label>
+    <input type="text" placeholder="Type to search" [formControl]="searchInput" />
+  </div>
+  <ul class="currencies-list">
     <li *ngFor="let asset of list$ | async">
       {{ asset.name }}
     </li>

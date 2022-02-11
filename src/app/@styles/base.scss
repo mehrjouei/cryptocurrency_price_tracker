@@ -1,4 +1,5 @@
 @use "./colors.scss";
+
 body {
   padding: 0;
   margin: 0;
@@ -10,7 +11,12 @@ ul {
   margin: 0;
 }
 input {
-  min-height: 30px;
+  min-height: 40px;
+  border-width: 1px;
+  border-radius: 3px;
+  border-color: colors.$inputBorderColor;
+  padding: 5px;
+  box-sizing: border-box;
 }
 a {
   color: inherit;

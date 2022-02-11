@@ -2,21 +2,22 @@
   <span class="menu-open-btn">
     <i
       *ngIf="!menuVisibility"
-      (click)="menuVisibility = !menuVisibility"
+      (click)="toggleMenu()"
       class="fa fa-bars fa-2x"
     ></i>
   </span>
 </div>
 <div class="menu" [ngClass]="{ menuVisible: menuVisibility }">
-  <div class="close-menu-btn" *ngIf="menuVisibility" (click)="menuVisibility = !menuVisibility">
+  <div class="close-menu-btn" *ngIf="menuVisibility" (click)="toggleMenu()">
     <i class="fa fa-close"></i>
   </div>
   <ul>
-    <li><a routerLink="/cryptocurrencies/list">Cryptocurrencies List</a></li>
-    <li><a routerLink="">Favorites</a></li>
+    <li *ngFor="let item of menuItems">
+      <a (click)="toggleMenu()" [routerLink]="[item.url]">{{ item.title }}</a>
+    </li>
   </ul>
 </div>
 <div class="content-wrapper">
   <router-outlet></router-outlet>
 </div>
-<div *ngIf="menuVisibility" (click)="menuVisibility = !menuVisibility" class="menu-overlay"></div>
+<div *ngIf="menuVisibility" (click)="toggleMenu()" class="menu-overlay"></div>

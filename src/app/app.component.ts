@@ -8,6 +8,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'cryptocurrency_price_tracker';
   menuVisibility = false;
+  menuItems = [
+    {
+      url: '/cryptocurrencies/list',
+      title: 'Cryptocurrencies List',
+    },
+    {
+      url: '/favorite/list',
+      title: 'Favorites',
+    },
+  ];
   constructor() {}
   ngOnInit() {}
+  toggleMenu() {
+    this.menuVisibility = !this.menuVisibility;
+  }
 }
