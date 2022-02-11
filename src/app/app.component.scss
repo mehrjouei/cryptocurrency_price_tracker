@@ -1,0 +1,67 @@
+@use "@styles/colors";
+@use "@styles/variables";
+
+.header {
+  position: relative;
+  height: variables.$headerHeight;
+  background-color: colors.$headerColor;
+  color: colors.$mainColor;
+  .menu-open-btn {
+    display: inline-block;
+    position: absolute;
+    padding: 10px;
+    color: colors.$black;
+    cursor: pointer;
+    transition: all variables.$menuTransitionTime linear;
+    right: 0px;
+    top: 0px;
+  }
+}
+.menu {
+  position: fixed;
+  right: -1 * variables.$menuWidth;
+  top: 0px;
+  height: 100vh;
+  width: variables.$menuWidth;
+  background-color: colors.$menubackground;
+  transition: all variables.$menuTransitionTime linear;
+  z-index: 999;
+  padding:10px;
+  box-sizing: border-box;
+  .close-menu-btn {
+    display: flex;
+    justify-content: end;
+    i{
+      font-size: 20px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+  }
+  &.menuVisible {
+    right: 0px;
+  }
+  ul{
+    margin-top: 10px;
+    li {
+    a {
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+      &:hover {
+        background-color: darken(colors.$menubackground, 20%);
+      }
+    }
+  }}
+}
+.menu-overlay {
+  position: fixed;
+  top:0px;
+  left:0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 998;
+  background-color: colors.$menuOverlayColor;
+}
+.content-wrapper {
+  padding: 10px;
+}

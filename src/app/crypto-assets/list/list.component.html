@@ -1,0 +1,11 @@
+<div *ngIf="!(loading$ | async); else loadingBlock">
+  <input type="text" placeholder="Type to search" [formControl]="searchInput" />
+  <ul>
+    <li *ngFor="let asset of list$ | async">
+      {{ asset.name }}
+    </li>
+  </ul>
+</div>
+<ng-template #loadingBlock>
+  <p>Loading ...</p>
+</ng-template>

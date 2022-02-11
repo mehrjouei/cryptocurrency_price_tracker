@@ -1,0 +1,22 @@
+<div class="header" [ngClass]="{ menuVisible: menuVisibility }">
+  <span class="menu-open-btn">
+    <i
+      *ngIf="!menuVisibility"
+      (click)="menuVisibility = !menuVisibility"
+      class="fa fa-bars fa-2x"
+    ></i>
+  </span>
+</div>
+<div class="menu" [ngClass]="{ menuVisible: menuVisibility }">
+  <div class="close-menu-btn" *ngIf="menuVisibility" (click)="menuVisibility = !menuVisibility">
+    <i class="fa fa-close"></i>
+  </div>
+  <ul>
+    <li><a routerLink="/cryptocurrencies/list">Cryptocurrencies List</a></li>
+    <li><a routerLink="">Favorites</a></li>
+  </ul>
+</div>
+<div class="content-wrapper">
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="menuVisibility" (click)="menuVisibility = !menuVisibility" class="menu-overlay"></div>
