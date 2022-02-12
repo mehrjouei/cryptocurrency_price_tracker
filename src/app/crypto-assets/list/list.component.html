@@ -1,10 +1,18 @@
 <div *ngIf="!(loading$ | async); else loadingBlock">
   <div class="input-wrapper">
     <label for="">Filter Currencies:</label>
-    <input type="text" placeholder="Type to search" [formControl]="searchInput" />
+    <input
+      type="text"
+      placeholder="Type to search"
+      [formControl]="searchInput"
+    />
   </div>
   <ul class="currencies-list">
-    <li *ngFor="let asset of list$ | async">
+    <li
+      *ngFor="let asset of list$ | async"
+      [ngClass]="{ selected: asset.isSelected }"
+      (click)="toggleFavourity(asset)"
+    >
       {{ asset.name }}
     </li>
   </ul>

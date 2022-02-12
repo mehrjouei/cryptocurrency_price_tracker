@@ -9,6 +9,11 @@ const routes: Routes = [
         (m) => m.CryptoAssetsModule
       ),
   },
+  {
+    path: 'favourites',
+    loadChildren: () =>
+      import('./favourites/favourites.module').then((m) => m.FavouritesModule),
+  },
 ];
 
 @NgModule({

@@ -14,8 +14,8 @@ export class AppComponent {
       title: 'Cryptocurrencies List',
     },
     {
-      url: '/favorite/list',
-      title: 'Favorites',
+      url: '/favourites/list',
+      title: 'Favourites',
     },
   ];
   constructor() {}
