@@ -7,7 +7,6 @@ import {
   updateFavourityPrice,
 } from './actions';
 import { initialState } from './state';
-
 export const favouritesReducer = createReducer(
   initialState,
   on(addToFavourites, (state, payload) => ({

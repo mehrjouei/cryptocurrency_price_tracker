@@ -7,7 +7,7 @@ import { getAssets, getAssetsSuccess } from './actions';
 
 @Injectable()
 export class AssetsEffects {
-  loadMovies$ = createEffect(() =>
+  loadAssets$ = createEffect(() =>
     this.actions$.pipe(
       ofType(getAssets),
       mergeMap(() =>

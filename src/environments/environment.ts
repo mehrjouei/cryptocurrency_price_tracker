@@ -6,8 +6,8 @@ export const environment = {
   production: false,
   apiUrl: 'http://rest-sandbox.coinapi.io/v1/',
   webSocketUrl: 'ws://ws-sandbox.coinapi.io/v1/',
-  apiKey:'E4070237-D5EA-4393-92FF-A513BF11166B',
-  // apiKey:'B05AF834-75E3-45A2-9871-D36F22BEC617',
+  // apiKey:'E4070237-D5EA-4393-92FF-A513BF11166B',
+  apiKey:'B05AF834-75E3-45A2-9871-D36F22BEC617',
   retry_connection_url: 10,
   base_currency:'USD'
 };

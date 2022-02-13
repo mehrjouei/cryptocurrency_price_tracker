@@ -4,8 +4,8 @@ import { getAssets } from '../state/actions';
 import { debounceTime, switchMap } from 'rxjs';
 import {
   selectCryptoAssetsLoading,
-  selectCryptoAssetsWithFavouritySelectFlag,
-  selectCryptoAssetsWithFavouritySelectFlagByName,
+  selectCryptoAssets,
+  selectCryptoAssetsByName,
 } from '../state/selectors';
 import { FormControl } from '@angular/forms';
 import { CurrencyAsset } from 'src/app/models/currencyAsset.model';
@@ -21,7 +21,7 @@ import { State } from '../state/state';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  list$ = this.store.select(selectCryptoAssetsWithFavouritySelectFlag);
+  list$ = this.store.select(selectCryptoAssets);
   loading$ = this.store.select(selectCryptoAssetsLoading);
   searchInput = new FormControl('');
   constructor(private store: Store<State>) {}
@@ -33,7 +33,7 @@ export class ListComponent implements OnInit {
         switchMap(
           (term) =>
             (this.list$ = this.store.select(
-              selectCryptoAssetsWithFavouritySelectFlagByName,
+              selectCryptoAssetsByName,
               {
                 term,
               }

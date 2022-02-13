@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
-import { CurrencyAsset, FavouiteAsset } from 'src/app/models/currencyAsset.model';
+import { FavouiteAsset } from 'src/app/models/currencyAsset.model';
 import { Xchange } from 'src/app/models/exchange.model';
+
 export const addToFavourites = createAction(
   '[Favourites] add to favourites',
   props<{ asset: FavouiteAsset }>()
