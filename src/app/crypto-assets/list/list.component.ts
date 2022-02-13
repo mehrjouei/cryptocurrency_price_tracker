@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { getAssets } from '../state/actions';
-import { debounceTime, map, mergeMap, switchMap, tap } from 'rxjs';
+import { debounceTime, switchMap } from 'rxjs';
 import {
-  selectCryptoAssets,
-  selectCryptoAssetsByName,
   selectCryptoAssetsLoading,
   selectCryptoAssetsWithFavouritySelectFlag,
   selectCryptoAssetsWithFavouritySelectFlagByName,
@@ -15,7 +13,6 @@ import {
   addToFavourites,
   removeFromFavourites,
 } from 'src/app/app-state/favourites/actions';
-import { selectFavourites } from 'src/app/app-state/favourites/selectors';
 import { State } from '../state/state';
 
 @Component({
