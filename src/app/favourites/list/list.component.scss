@@ -1,0 +1,34 @@
+@use "./../../@styles/colors";
+@use "./../../@styles/variables";
+@use "./../../@styles/mixins";
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 10px;
+  li {
+    display: flex;
+    height: 50px;
+    margin-bottom: 7px;
+    border: 1px solid lighten(colors.$black, 80%);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: colors.$white;
+    @include mixins.box-shadow(0, 0, 4px, colors.$shodowColor);
+
+    &:hover {
+      background-color: darken(colors.$white, 5%);
+    }
+    .remove {
+      justify-self: end;
+      cursor: pointer;
+      margin-right: 5px;
+      i{
+        font-size: 20px;
+      }
+    }
+  }
+}

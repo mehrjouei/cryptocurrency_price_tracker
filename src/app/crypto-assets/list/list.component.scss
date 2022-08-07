@@ -1,0 +1,35 @@
+@use "../../@styles/colors.scss";
+@use "../../@styles/mixins.scss";
+.input-wrapper {
+  padding: 20px;
+  background-color: colors.$white;
+  border-radius: 5px;
+  @include mixins.box-shadow(0, 0, 4px, colors.$shodowColor);
+  input {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+ul.currencies-list {
+  padding: 10px 5px;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    padding: 5px 8px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: 1px solid lighten(colors.$black, 80%);
+    border-radius: 10px;
+    background-color: colors.$white;
+    @include mixins.box-shadow(0, 0, 4px, colors.$shodowColor);
+    cursor: pointer;
+    &:hover {
+      border-color:lighten(colors.$black, 50%);
+    }
+    &.selected {
+      background-color: colors.$mainColor;
+      border-color:colors.$mainColor;
+    }
+  }
+}

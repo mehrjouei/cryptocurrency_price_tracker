@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let favouite of list$ | async">
+    <span class="name">{{ favouite.name }}</span>
+    <span class="price">{{ favouite.price }}</span>
+    <span class="remove" (click)="remove(favouite)">
+      <i class="fa fa-close"></i>
+    </span>
+  </li>
+</ul>
